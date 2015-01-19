@@ -1,13 +1,8 @@
 class ssh::install {
-
-  $package_name = $::osfamily ?
-    'RedHat'	=> "openssh-server",
-    'Debian'	=> "openssh-server",
-    'Solaris'	=> "openssh",
-    },
+  include ssh::params
     package { 'ssh':
     ensure	=> present,
-    name	=> $package_name,
+    name	=> $::ssh::params::ssh_package_name,
   }
 }	
 
