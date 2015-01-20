@@ -13,7 +13,7 @@ class ssh::params {
     RedHat: {
       $ssh_package_name = 'openssh-server'
       $ssh_service_config = '/etc/ssh/sshd_config'
-      $ssh_service_name = 'ssh'
+      $ssh_service_name = 'sshd'
     }
     default: {
       fail("Module propuppet-ssh does not support osdamily: ${::osfamily}")
