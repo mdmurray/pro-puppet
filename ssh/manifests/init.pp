@@ -39,5 +39,7 @@ class ssh {
   class { '::ssh::install': } ->
   class { '::ssh::config': } ->
   class { '::ssh::service': } ->
+  class { '::ssh::hostkeys': } ->
+  class { '::ssh::knownhosts': } ->
   Class['ssh']
 }
